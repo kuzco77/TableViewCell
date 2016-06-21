@@ -18,16 +18,21 @@
 
 -(NSInteger)numberOfSectionInTableView:(UITableView*)tableView
 {
-    return 4;
+    return 3;
 }
 
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    if (section==1) {
+        return 4;
+    }
+    return 2;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _BTN_TableView.delegate = self;
+    _BTN_TableView.dataSource = self;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
